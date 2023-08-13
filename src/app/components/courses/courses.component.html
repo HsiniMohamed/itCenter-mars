@@ -1,0 +1,33 @@
+<main id="main" data-aos="fade-in">
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs">
+    <div class="container">
+      <h2>Courses</h2>
+      <p>
+        Join our classes and let us help you realize your full potential in the
+        exciting world of computing and information technology.
+      </p>
+    </div>
+  </div>
+  <!-- End Breadcrumbs -->
+
+  <!-- ======= Courses Section ======= -->
+  <section id="courses" class="courses">
+    <div class="container" data-aos="fade-up">
+      <div class="row" data-aos="zoom-in" data-aos-delay="100">
+        <div
+          class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0"
+          *ngFor="let cours of courses"
+        >
+          <app-course
+            [coursInput]="cours"
+            (coursesToSend)="updateCourses($event)"
+          ></app-course>
+        </div>
+        <!-- End Course Item-->
+      </div>
+    </div>
+  </section>
+  <!-- End Courses Section -->
+</main>
+<!-- End #main -->

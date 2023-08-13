@@ -1,0 +1,32 @@
+<!-- ======= Courses Section ======= -->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Duree</th>
+      <th scope="col">Description</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cours of coursesTab">
+      <td style="background-color: rgb(133, 196, 133)">{{ cours.name }}</td>
+      <td>{{ cours.duree }}</td>
+      <td>{{ cours.description }}</td>
+      <td>
+        <button
+          class="btn btn-outline-success"
+          (click)="goToEditCours(cours._id)"
+        >
+          Edit
+        </button>
+        <button
+          class="btn btn-outline-danger ms-1"
+          (click)="deleteCours(cours._id)"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

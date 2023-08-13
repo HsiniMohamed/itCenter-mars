@@ -1,0 +1,38 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Cours Id</th>
+      <th scope="col">Teacher Id</th>
+      <th scope="col">Students Id</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let group of groupesTab">
+      <td>{{ group.name }}</td>
+      <td>{{ group.coursId }}</td>
+      <td>{{ group.teacherId }}</td>
+      <td>
+        <tr *ngFor="let student of group.studentsId">
+          <td>{{ student }}</td>
+        </tr>
+      </td>
+
+      <td>
+        <button
+          class="btn btn-outline-secondary ms-1"
+          (click)="showDetails(group._id)"
+        >
+          Details
+        </button>
+        <button
+          class="btn btn-outline-danger ms-1"
+          (click)="deleteGroup(group._id)"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

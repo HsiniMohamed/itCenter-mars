@@ -1,0 +1,49 @@
+<div class="breadcrumbs">
+  <div class="container">
+    <h2>Search Teachers</h2>
+  </div>
+</div>
+<section id="trainers" class="trainers">
+  <div class="container" data-aos="fade-up">
+    <div class="row" data-aos="zoom-in" data-aos-delay="100">
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <form
+          #searchTeacherForm="ngForm"
+          (ngSubmit)="searchTeacher()"
+          class="php-email-form"
+        >
+          <input
+            type="text"
+            placeholder=" Search By Specialite  "
+            class="mb-2 form"
+            [(ngModel)]="teacher.specialite"
+            [ngModelOptions]="{ standalone: true }"
+            #teacherInput="ngModel"
+            [ngClass]="{
+              'is-invalid': searchTeacherForm.submitted && teacherInput.invalid
+            }"
+            required
+          />
+          <div
+            *ngIf="searchTeacherForm.submitted && teacherInput.invalid"
+            class="invalid-feedback"
+          >
+            <p *ngIf="teacherInput.errors.required">Specialite Is Required</p>
+          </div>
+          <input type="submit" value="Search " class="get-started-btn" />
+        </form>
+      </div>
+    </div>
+    <div class="row" data-aos="zoom-in" data-aos-delay="100">
+      <div
+        class="col-lg-4 col-md-6 d-flex align-items-stretch"
+        *ngFor="let teacher of feindedTeachers"
+      >
+        <app-trainer [teacherInput]="teacher"></app-trainer>
+      </div>
+      <div class="text-center mb-3" *ngIf="feindedTeachers?.length == 0">
+        There Is No Teacher With These Specialite !!
+      </div>
+    </div>
+  </div>
+</section>

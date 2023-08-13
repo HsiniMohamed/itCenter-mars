@@ -1,0 +1,114 @@
+<!-- ======= Breadcrumbs ======= -->
+<div class="breadcrumbs" data-aos="fade-in">
+  <div class="container">
+    <h2>{{ groupe?.name }}</h2>
+  </div>
+</div>
+<!-- End Breadcrumbs -->
+
+<!-- ======= Cource Details Section ======= -->
+<section id="course-details" class="course-details">
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="col-lg-8">
+        <img src="assets/img/course-details.jpg" class="img-fluid" alt="" />
+        <h3 class="text-success">Students</h3>
+      </div>
+      <div class="col-lg-4">
+        <div
+          class="course-info d-flex justify-content-between align-items-center"
+        >
+          <h5>
+            <span class="text-success">Trainer </span> {{ teacher?.firstName }}
+            {{ teacher?.lastName }}
+          </h5>
+        </div>
+
+        <div
+          class="course-info d-flex justify-content-between align-items-center"
+        >
+          <h5><span class="text-success">Cours </span> {{ cours?.name }}</h5>
+        </div>
+
+        <div
+          *ngIf="isLoggedIn() && decodedToken.role == 'admin'"
+          class="course-info d-flex justify-content-between align-items-center"
+        >
+          <form
+            #groupeForm="ngForm"
+            (ngSubmit)="addStudent()"
+            class="php-email-form"
+          >
+            <input
+              type="tel"
+              placeholder="Enter a student number"
+              class="mb-2 form-control"
+              [(ngModel)]="newStudent.idStudent"
+              [ngModelOptions]="{ standalone: true }"
+            /><input
+              type="submit"
+              value="Add Student"
+              class="get-started-btn"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Tel</th>
+              <th scope="col">E-mail</th>
+              <th
+                *ngIf="isLoggedIn() && decodedToken.role != 'admin'"
+                scope="col"
+              >
+                Note
+              </th>
+              <th
+                *ngIf="isLoggedIn() && decodedToken.role != 'admin'"
+                scope="col"
+              >
+                Evaluation
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of studentsTab">
+              <td>{{ student?.firstName }}</td>
+              <td>{{ student?.lastName }}</td>
+              <td>{{ student?.tel }}</td>
+              <td>{{ student?.email }}</td>
+              <td *ngIf="isLoggedIn() && decodedToken.role != 'admin'">
+                {{ student?.note }}
+              </td>
+              <td *ngIf="isLoggedIn() && decodedToken.role != 'admin'">
+                {{ student?.evaluation }}
+              </td>
+              <td>
+                <button
+                  *ngIf="
+                    isLoggedIn() &&
+                    decodedToken.role == 'teacher' &&
+                    !student.note
+                  "
+                  class="btn btn-outline-secondary ms-1"
+                  (click)="
+                    goToAddNote(student.tel, teacher.tel, cours._id, groupe._id)
+                  "
+                >
+                  Add Note
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Cource Details Section -->

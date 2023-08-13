@@ -1,0 +1,24 @@
+<!-- ======= Trainers Section ======= -->
+<section id="trainers" class="trainers">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Teachers</h2>
+      <p>Popular Teachers</p>
+    </div>
+
+    <div class="row" data-aos="zoom-in" data-aos-delay="100">
+      <div
+        class="col-lg-4 col-md-6 d-flex align-items-stretch"
+        *ngFor="let teacher of usersTab.slice(0, 3)"
+      >
+        <app-trainer [teacherInput]="teacher"></app-trainer>
+      </div>
+      <p class="text-center">
+        <a routerLink="teachers" class="text-center text-success"
+          >Show More Teachers...</a
+        >
+      </p>
+    </div>
+  </div>
+</section>
+<!-- End Trainers Section -->

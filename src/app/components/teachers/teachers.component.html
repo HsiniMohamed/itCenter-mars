@@ -1,0 +1,21 @@
+<div class="breadcrumbs">
+  <div class="container">
+    <h2>Trainers</h2>
+    <p>
+      Our mission is to give you the tools needed to shape the digital future
+      and contribute to the technological progress of tomorrow.
+    </p>
+  </div>
+</div>
+<section id="trainers" class="trainers">
+  <div class="container" data-aos="fade-up">
+    <div class="row" data-aos="zoom-in" data-aos-delay="100">
+      <div
+        class="col-lg-4 col-md-6 d-flex align-items-stretch"
+        *ngFor="let teacher of usersTab"
+      >
+        <app-trainer [teacherInput]="teacher"></app-trainer>
+      </div>
+    </div>
+  </div>
+</section>

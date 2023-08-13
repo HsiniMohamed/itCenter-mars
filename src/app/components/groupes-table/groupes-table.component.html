@@ -1,0 +1,27 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name Groupe</th>
+      <th scope="col">Cours Id</th>
+      <th scope="col">Students</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let group of groupesTab">
+      <td>{{ group.name }}</td>
+      <td>{{ group.coursId }}</td>
+
+      <td>{{ group.studentsId.length }}</td>
+
+      <td>
+        <button
+          class="btn btn-outline-secondary ms-1"
+          (click)="showDetails(group._id)"
+        >
+          Details
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,32 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Tel</th>
+      <th scope="col">Tel Child</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of usersTab">
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.tel }}</td>
+      <td>{{ user.telChild }}</td>
+      <td>{{ user.adresse }}</td>
+      <td>{{ user.email }}</td>
+
+      <td>
+        <button
+          class="btn btn-outline-danger ms-1"
+          (click)="deleteUser(user._id)"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

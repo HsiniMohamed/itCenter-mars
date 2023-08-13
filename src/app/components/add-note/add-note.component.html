@@ -1,0 +1,100 @@
+<main id="main">
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs" data-aos="fade-in">
+    <div class="container">
+      <h2>Add Note</h2>
+    </div>
+  </div>
+  <!-- End Breadcrumbs -->
+  <section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+      <div class="row mt-5">
+        <div class="col-lg-3 mt-5 mt-lg-0 ml-lg-3"></div>
+        <div class="col-lg-6 mt-5 mt-lg-0 ml-lg-3">
+          <form
+            #noteForm="ngForm"
+            (ngSubmit)="addNote()"
+            class="php-email-form"
+          >
+            <label
+              for="teacherId"
+              class="col-sm-2 col-form-label text-success text fw-bolder"
+              >Teacher Id</label
+            >
+            <input
+              type="text"
+              placeholder="Teacher Id"
+              id="teacherId"
+              class="form-control-plaintext mb-2"
+              [(ngModel)]="note.teacherId"
+              [ngModelOptions]="{ standalone: true }"
+              readonly
+            />
+            <label
+              for="studentId"
+              class="col-sm-2 col-form-label text-success text fw-bolder"
+              >Student Id</label
+            >
+
+            <input
+              type="text"
+              placeholder="Student Id"
+              id="studentId"
+              class="form-control-plaintext mb-2"
+              [(ngModel)]="note.studentId"
+              [ngModelOptions]="{ standalone: true }"
+              readonly
+            />
+            <label
+              for="grouprId"
+              class="col-sm-2 col-form-label text-success text fw-bolder"
+              >Groupe Id</label
+            >
+
+            <input
+              type="text"
+              placeholder="Groupe Id"
+              id="groupeId"
+              class="form-control-plaintext mb-2"
+              [(ngModel)]="note.groupeId"
+              [ngModelOptions]="{ standalone: true }"
+              readonly
+            />
+            <label
+              for="coursId"
+              class="col-sm-2 col-form-label text-success text fw-bolder"
+              >Cours Id</label
+            >
+
+            <input
+              type="text"
+              placeholder="Cours Id"
+              id="coursId"
+              class="form-control-plaintext mb-2"
+              [(ngModel)]="note.coursId"
+              [ngModelOptions]="{ standalone: true }"
+              readonly
+            />
+            <input
+              type="number"
+              placeholder="Note"
+              class="mb-2 form-control"
+              [(ngModel)]="note.note"
+              [ngModelOptions]="{ standalone: true }"
+            />
+            <input
+              type="text"
+              placeholder="Evaluation"
+              class="mb-2 form-control"
+              [(ngModel)]="note.evaluation"
+              [ngModelOptions]="{ standalone: true }"
+            />
+            <div class="text-center">
+              <input type="submit" value="Add Note" class="get-started-btn" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,28 @@
+<!-- ======= Popular Courses Section ======= -->
+<section id="popular-courses" class="courses">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Courses</h2>
+      <p>Popular Courses</p>
+    </div>
+
+    <div class="row" data-aos="zoom-in" data-aos-delay="100">
+      <!-- End Course Item-->
+
+      <div
+        class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0"
+        *ngFor="let cours of courses.slice(0, 3)"
+      >
+        <app-course [coursInput]="cours"></app-course>
+      </div>
+      <!-- End Course Item-->
+      <p class="text-center">
+        <a routerLink="courses" class="text-center text-success"
+          >Show More Courses...</a
+        >
+      </p>
+      <!-- End Course Item-->
+    </div>
+  </div>
+</section>
+<!-- End Popular Courses Section -->

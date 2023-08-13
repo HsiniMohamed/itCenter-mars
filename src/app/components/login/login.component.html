@@ -1,0 +1,108 @@
+<main id="main">
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs" data-aos="fade-in">
+    <div class="container">
+      <h2>Login</h2>
+      <p>
+        Bienvenue sur notre page de connexion, votre point d'accès centralisé
+        pour tous les acteurs de notre école axée sur l'IT.
+      </p>
+    </div>
+  </div>
+  <!-- End Breadcrumbs -->
+
+  <!-- ======= Signup Section ======= -->
+  <section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+      <div class="row mt-5">
+        <div class="col-lg-12 mt-5 mt-lg-0">
+          <form
+            class="login-form"
+            [formGroup]="loginForm"
+            class="php-email-form"
+          >
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input
+                  class="form-control"
+                  type="tel"
+                  formControlName="tel"
+                  placeholder="Your Phone Number"
+                />
+                <div
+                  *ngIf="
+                    loginForm.controls['tel'].invalid &&
+                    (loginForm.controls['tel'].touched ||
+                      loginForm.controls['tel'].dirty)
+                  "
+                >
+                  <div
+                    *ngIf="loginForm.controls['tel'].errors.required"
+                    class="text-warning"
+                  >
+                    Phone Is Required
+                  </div>
+                  <div
+                    *ngIf="loginForm.controls['tel'].errors.pattern"
+                    class="text-warning"
+                  >
+                    Please enter valid phone number.
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input
+                  type="password"
+                  class="form-control"
+                  formControlName="pwd"
+                  placeholder="Your Password"
+                />
+                <span style="color: red">{{ errorMsg }}</span>
+
+                <div
+                  *ngIf="
+                    loginForm.controls['pwd'].invalid &&
+                    (loginForm.controls['pwd'].touched ||
+                      loginForm.controls['pwd'].dirty)
+                  "
+                >
+                  <div
+                    *ngIf="loginForm.controls['pwd'].errors.required"
+                    class="text-warning"
+                  >
+                    Password Is Required
+                  </div>
+                  <div
+                    *ngIf="loginForm.controls['pwd'].errors.minlength"
+                    class="text-warning"
+                  >
+                    Password must have at least 6 chars
+                  </div>
+                  <div
+                    *ngIf="loginForm.controls['pwd'].errors.maxlength"
+                    class="text-warning"
+                  >
+                    Password must have at most 8 chars
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <button
+                type="submit"
+                (click)="login()"
+                [disabled]="loginForm.invalid"
+              >
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Signup Section -->
+</main>
+<!-- End #main -->

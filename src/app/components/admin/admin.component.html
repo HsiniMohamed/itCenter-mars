@@ -1,0 +1,124 @@
+<main id="main" data-aos="fade-in">
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs">
+    <div class="container">
+      <h2>Admin</h2>
+    </div>
+  </div>
+  <!-- End Breadcrumbs -->
+  <div class="container">
+    <ul class="nav nav-underline" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a
+          class="nav-link active link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+          id="users-tab"
+          data-bs-toggle="pill"
+          href="#teachers"
+          role="tab"
+          aria-controls="users"
+          aria-selected="false"
+          >Teachers</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+          id="cours-tab"
+          data-bs-toggle="pill"
+          href="#students"
+          role="tab"
+          aria-controls="cours"
+          aria-selected="true"
+          >Students</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+          id="cours-tab"
+          data-bs-toggle="pill"
+          href="#parents"
+          role="tab"
+          aria-controls="cours"
+          aria-selected="true"
+          >Parents</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+          id="cours-tab"
+          data-bs-toggle="pill"
+          href="#cours"
+          role="tab"
+          aria-controls="cours"
+          aria-selected="true"
+          >Cours</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a
+          class="nav-link link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+          id="group-tab"
+          data-bs-toggle="pill"
+          href="#group"
+          role="tab"
+          aria-controls="group"
+          aria-selected="false"
+          >Group</a
+        >
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div
+        class="tab-pane fade show active"
+        id="teachers"
+        role="tabpanel"
+        aria-labelledby="users-tab"
+      >
+        <app-display-teachers></app-display-teachers>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="students"
+        role="tabpanel"
+        aria-labelledby="cours-tab"
+      >
+        <app-display-students></app-display-students>
+
+        <!-- Insérez ici le contenu relatif aux cours -->
+      </div>
+      <div
+        class="tab-pane fade"
+        id="parents"
+        role="tabpanel"
+        aria-labelledby="cours-tab"
+      >
+        <app-display-parents></app-display-parents>
+
+        <!-- Insérez ici le contenu relatif aux cours -->
+      </div>
+      <div
+        class="tab-pane fade"
+        id="cours"
+        role="tabpanel"
+        aria-labelledby="cours-tab"
+      >
+        <app-display-cours></app-display-cours>
+
+        <!-- Insérez ici le contenu relatif aux cours -->
+      </div>
+
+      <div
+        class="tab-pane fade"
+        id="group"
+        role="tabpanel"
+        aria-labelledby="group-tab"
+      >
+        <app-display-group></app-display-group>
+        <!-- Insérez ici le contenu relatif aux groupes -->
+      </div>
+    </div>
+  </div>
+</main>
